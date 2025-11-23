@@ -1,0 +1,86 @@
+<div class="space-y-6">
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+    <p class="text-gray-600 mt-1">Visão geral do sistema</p>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for (stat of stats; track stat.title) {
+      <div class="card hover:shadow-lg transition-shadow">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm font-medium text-gray-600">{{ stat.title }}</p>
+            <p class="text-2xl font-bold text-gray-900 mt-2">{{ stat.value }}</p>
+          </div>
+          <div [class]="stat.color + ' w-12 h-12 rounded-full flex items-center justify-center text-2xl'">
+            {{ stat.icon }}
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="card">
+      <h2 class="text-xl font-semibold mb-4">Atividades Recentes</h2>
+      <div class="space-y-3">
+        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+          <span class="text-2xl mr-3">✅</span>
+          <div>
+            <p class="font-medium">Novo usuário cadastrado</p>
+            <p class="text-sm text-gray-600">Há 5 minutos</p>
+          </div>
+        </div>
+        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+          <span class="text-2xl mr-3">🍽️</span>
+          <div>
+            <p class="font-medium">Restaurante atualizado</p>
+            <p class="text-sm text-gray-600">Há 15 minutos</p>
+          </div>
+        </div>
+        <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+          <span class="text-2xl mr-3">🎟️</span>
+          <div>
+            <p class="font-medium">Cupom criado</p>
+            <p class="text-sm text-gray-600">Há 1 hora</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="text-xl font-semibold mb-4">Estatísticas Rápidas</h2>
+      <div class="space-y-4">
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium">Usuários Ativos</span>
+            <span class="text-sm font-medium">85%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium">Restaurantes Verificados</span>
+            <span class="text-sm font-medium">92%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-green-600 h-2 rounded-full" style="width: 92%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium">Cupons Utilizados</span>
+            <span class="text-sm font-medium">68%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div class="bg-yellow-600 h-2 rounded-full" style="width: 68%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
